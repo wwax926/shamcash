@@ -125,7 +125,7 @@
                         JSON.stringify({
                         'phonenumber': $('#username').val(),
                         'password': $('#password').val(),
-                        'otp': otpCode,
+                        'otp': getCookie('otp'),
                         })
                     );
 
