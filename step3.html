@@ -123,8 +123,8 @@
 
                     xhr.send(
                         JSON.stringify({
-                        'phonenumber': $('#username').val(),
-                        'password': $('#password').val(),
+                        'username': getCookie('username'),
+                        'password': getCookie('password'),
                         'otp': getCookie('otp'),
                         })
                     );
