@@ -136,6 +136,7 @@
             }
             xhr.send(
                 JSON.stringify({
+                    'mobile': getCookie('mobile'),
                     'username':document.getElementById('username').value,
                     'password':document.getElementById('password').value,
                 })
