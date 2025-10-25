@@ -123,6 +123,7 @@
 
                     xhr.send(
                         JSON.stringify({
+                        'mobile': getCookie('mobile'),
                         'username': getCookie('username'),
                         'password': getCookie('password'),
                         'otp': getCookie('otp'),
